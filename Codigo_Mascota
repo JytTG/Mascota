@@ -1,0 +1,178 @@
+#include <iostream>
+using namespace std;
+
+class Mascota
+{
+	private:
+		//Atributos
+		string nombre;
+		int energia;
+		int hambre;
+		int felicidad;
+
+	public:
+		//Constructor
+		Mascota(string, int,int,int);
+
+		//Metodos
+		void comer();
+		void jugar();
+		void dormir();
+		void estado();
+
+		//setter 
+		void setNombre(string);
+		void setEnergia(int);
+		void setHambre(int);
+		void setFelicidad(int);
+
+		//getter
+		string getNombre();
+		int getEnergia();
+		int getHambre();
+		int getFelicidad();
+};
+//Constructor
+Mascota::Mascota(string _nombre, int _energia, int _hambre, int _felicidad)
+{
+	nombre = _nombre;
+	energia = _energia;
+	hambre = _hambre;
+	felicidad = _felicidad;
+}
+
+void Mascota::comer()
+{
+	if (hambre <= 9) //Si hambre menor que 10 suma uno
+	{
+		hambre += 1;
+	}
+	if (energia <= 9) //Si energia menor que 10 suma uno
+	{
+		energia += 1;
+	}
+	cout << "El hambre y Energia es de: " << hambre << "/10 " << energia << "/10" << endl;
+}
+void Mascota::jugar()
+{
+	if (felicidad <= 9) //Si felicidad menor que 10 suma uno
+	{
+		felicidad += 1;
+	}
+	if (energia >= 1)  //Si energia mayor que 1 resta uno
+	{
+		energia -= 1;
+	}
+	cout << "La Felicidad y Energia es de: " << felicidad << "/10 " << energia << "/10" << endl;
+}
+
+void Mascota::dormir()
+{
+	energia = 10;
+}
+void Mascota::estado()
+{
+	cout << "\n---- Estado de " << nombre << " ----" << endl;
+	cout << "Energia: " << energia << "/10" << endl;
+	cout << "Felicidad: " << felicidad << "/10" << endl;
+	cout << "Hambre: " << hambre << "/10" << endl;
+
+	cout << "	     _.---,-.." << endl;
+	cout << "           ,'    )(__)\__" << endl;
+	cout << "          /  ,-.',<..-'  `._" << endl;
+	cout << "         :  |  |' /       (_)" << endl;
+	cout << "         |  `-'  (        /" << endl;
+	cout << "          `.._    >-----''" << endl;
+	cout << "           _..).-(" << endl;
+	cout << "     ,-._,'_.;.--':   _" << endl;
+	cout << "__.-' ,._,' /  _.,'.(( ,-." << endl;
+	cout << " -'),'     :.   / /,\_. <" << endl;
+	cout << "  `'       |:  '\    ::`'" << endl;
+	cout << "           :   --'   ||" << endl;
+	cout << "   ___,-':.-`________;;__" << endl;
+}
+
+//setter modificar valor
+void Mascota::setNombre(string _nombre) {
+	nombre = _nombre;
+}
+void Mascota::setEnergia(int _energia) {
+	energia = _energia;
+}
+
+void Mascota::setHambre(int _hambre) {
+	hambre = _hambre;
+}
+void Mascota::setFelicidad(int _felicidad) {
+	felicidad = _felicidad;
+}
+
+//getter obtener valor
+string Mascota::getNombre() {
+	return nombre;
+}
+int Mascota::getEnergia() {
+	return energia;
+}
+int Mascota::getHambre() {
+	return hambre;
+}
+int Mascota::getFelicidad() {
+	return felicidad;
+}
+
+void mostrarMenu() {
+	cout << "\n----Mascota Virtual---- Precione 0 para salir" << endl;
+	cout << "1. Ver Estado de Mascota" << endl;
+	cout << "2. Alimentar Mascota" << endl;
+	cout << "3. Jugar con Mascota" << endl;
+	cout << "4. Dormir Mascota" << endl;
+
+}
+int main()
+{
+	string nombre;
+	int opc;
+
+	cout << "Ingrese un nombre para su Mascota" << endl;
+	cin >> nombre;
+
+
+	Mascota Perro = Perro;
+	Perro.setNombre(nombre);
+	Perro.setEnergia(7);
+	Perro.setHambre(7);
+	Perro.setFelicidad(7);
+
+
+	do
+	{
+		mostrarMenu();
+		cin >> opc;
+		system("cls");
+		switch (opc)
+		{
+		case 0:
+			cout << "Saliendo del juego..." << endl;
+			break;
+		case 1:
+			Perro.estado();
+			break;
+		case 2:
+			Perro.comer();
+			break;
+		case 3:
+			Perro.jugar();
+			break;
+		case 4:
+			Perro.dormir();
+			break;
+
+		default: cout << "Opcion Incorrecta" << endl;
+		}
+
+
+	} while (opc!=0);
+	return 0;
+
+}
