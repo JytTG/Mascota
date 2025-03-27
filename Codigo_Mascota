@@ -43,39 +43,85 @@ Mascota::Mascota(string _nombre, int _energia, int _hambre, int _felicidad)
 
 void Mascota::comer()
 {
+	string resultado_1, resultado_2;
+
 	if (hambre <= 9) //Si hambre menor que 10 suma uno
 	{
 		hambre += 1;
 	}
+
+	for (int i=1; i<= hambre;i++)
+	{
+		resultado_1 += "*";
+	}
+
 	if (energia <= 9) //Si energia menor que 10 suma uno
 	{
 		energia += 1;
 	}
-	cout << "El hambre y Energia es de: " << hambre << "/10 " << energia << "/10" << endl;
+
+	for (int i=1; i<= energia;i++)
+	{
+		resultado_2 += "*";
+	}
+	cout << "El hambre es: " << resultado_1 << "\n La Energia es de: " <<  resultado_2 <<  endl;
 }
 void Mascota::jugar()
 {
+	string resultado_1, resultado_2;
+
 	if (felicidad <= 9) //Si felicidad menor que 10 suma uno
 	{
 		felicidad += 1;
 	}
+
+	for (int i=1; i<= felicidad;i++)
+	{
+		resultado_1 += "*";
+	}
+
 	if (energia >= 1)  //Si energia mayor que 1 resta uno
 	{
 		energia -= 1;
 	}
-	cout << "La Felicidad y Energia es de: " << felicidad << "/10 " << energia << "/10" << endl;
+
+	for (int i=1; i<= energia;i++)
+	{
+		resultado_2 += "*";
+	}
+	cout << "La Felicidad es: " << resultado_1 << "\n La Energia es de: " <<  resultado_2 <<  endl;
+
 }
 
 void Mascota::dormir()
 {
+	string resultado_1;
 	energia = 10;
+	for (int i=1; i<= energia;i++)
+	{
+		resultado_1 += "*";
+	}
+	cout <<"Energia Restablecida "<< resultado_1<<endl;
 }
 void Mascota::estado()
 {
+	string energia1,felicidad1,hambre1;
+
+	for (int i = 1; i <= energia; i++) {
+		energia1 += "*";
+	}
+	for (int i = 1; i <= felicidad; i++) {
+		felicidad1 += "*";
+	}
+
+	for (int i = 1; i <= hambre; i++) {
+		hambre1 += "*";
+	}
+
 	cout << "\n---- Estado de " << nombre << " ----" << endl;
-	cout << "Energia: " << energia << "/10" << endl;
-	cout << "Felicidad: " << felicidad << "/10" << endl;
-	cout << "Hambre: " << hambre << "/10" << endl;
+	cout << "Energia: " << energia1 << endl;
+	cout << "Felicidad: " << felicidad1 << endl;
+	cout << "Hambre: " << hambre1 << endl;
 
 	cout << "	     _.---,-.." << endl;
 	cout << "           ,'    )(__)\__" << endl;

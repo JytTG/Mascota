@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+    string resultado_1, resultado_2;
+    int hambre = 4;
+
+    for (int i=1; i<= hambre;i++)
+	{
+		resultado_1 += "*";
+	}
+    cout << resultado_1<<endl;
+}
