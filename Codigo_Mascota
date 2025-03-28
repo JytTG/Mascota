@@ -105,23 +105,23 @@ void Mascota::dormir()
 }
 void Mascota::estado()
 {
-	string energia1,felicidad1,hambre1;
+	string energia_1,felicidad_1,hambre_1;
 
 	for (int i = 1; i <= energia; i++) {
-		energia1 += "*";
+		energia_1 += "*";
 	}
 	for (int i = 1; i <= felicidad; i++) {
-		felicidad1 += "*";
+		felicidad_1 += "*";
 	}
 
 	for (int i = 1; i <= hambre; i++) {
-		hambre1 += "*";
+		hambre_1 += "*";
 	}
 
 	cout << "\n---- Estado de " << nombre << " ----" << endl;
-	cout << "Energia: " << energia1 << endl;
-	cout << "Felicidad: " << felicidad1 << endl;
-	cout << "Hambre: " << hambre1 << endl;
+	cout << "Energia: " << energia_1 << endl;
+	cout << "Felicidad: " << felicidad_1 << endl;
+	cout << "Hambre: " << hambre_1 << endl;
 
 	cout << "	     _.---,-.." << endl;
 	cout << "           ,'    )(__)\__" << endl;
